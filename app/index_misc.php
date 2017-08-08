@@ -10,6 +10,7 @@ $server_path = $ini_array['application']['server_path'];
 $shared_path = $ini_array['application']['shared_path'];
 echo "<html>
 <head>
+<script>var isc = null;</script>
 <script>var serverPath = '$server_path';</script>
 <script>var isomorphicDir = '{$source_path}{$smart_ver}/smartclientRuntime/isomorphic/';</script>
 <script src='{$source_path}{$smart_ver}/smartclientRuntime/isomorphic/system/modules/ISC_Core.js'></script>
