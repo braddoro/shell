@@ -4,7 +4,7 @@ isc.defineClass("Navigation", "Menu").addProperties({
 			title: "...",
 			showShadow: true,
 			items: [
-				{title: "Items", click: "isc.Items.create()"},
+				{title: "Items", click: "isc.Items.create({test1: \"foo\", test2: 22, width: 500})"},
 				{title: "UserStories", click: "isc.UserStories.create()"}
 			]
 		});

@@ -1,4 +1,3 @@
-//isc.setAutoDraw(false);
 isc.RPCResponse.STATUS_ERROR_DATA_ACCESS = -110;
 isc.RPCResponse.STATUS_SERVER_CONNECTION_ERROR = -111;
 isc.RPCResponse.STATUS_SETUP_DATA_ERROR = -112;
@@ -33,17 +32,20 @@ isc.defineClass("myDataSource", "DataSource").addProperties({
 	},
 	transformResponse: function(dsResponse, dsRequest, data){
 		var newResponse;
-		var status = (data.status) ? data.status : isc.RPCResponse.STATUS_SUCCESS;
+		var status = (dsResponse.status) ? dsResponse.status : isc.RPCResponse.STATUS_SUCCESS;
 		var title = errorTitle(status);
+		var error = (data) ? data : title;
+		error = title + "<br/>Error Code: " + status + "<br/>" + error;
+
 		if(status === isc.RPCResponse.STATUS_SUCCESS){
 			newResponse = dsResponse;
 			isc.addProperties({}, newResponse, {willHandleError: true});
 		}else{
-			isc.warn(data.errorMessage, null, {title: title});
+			isc.warn(error, null, {title: title});
 			newResponse = {
 				status: status,
 				willHandleError: true,
-				data: data.errorMessage
+				data: error
 			};
 		}
 		return this.Super("transformResponse", [newResponse, dsRequest, data]);
