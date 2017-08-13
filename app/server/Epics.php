@@ -1,8 +1,8 @@
 <?php
 require_once('../../lib/DataModel.php');
 $params = array(
-	'baseTable' => 'agile_user_stories',
-	'pk_col' => 'userStoryID',
+	'baseTable' => 'agile_epics',
+	'pk_col' => 'epicID',
 	'allowedOperations' => array('fetch','add','update','remove')
 );
 $lclass = New DataModel($params);

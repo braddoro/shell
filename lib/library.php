@@ -10,9 +10,11 @@ function string2array($array){
 function parseArray($inArr) {
 	$outStr = null;
 	foreach($inArr as $key => $element) {
-		$tempStr = $key . ' | ' . $element . "<br />";
 		if(is_array($element)){
 			$tempStr = parseArray($element);
+		}
+		if(!is_array($element)){
+			$tempStr = $key . ' | ' . $element . "<br />";
 		}
 		$outStr .= $tempStr;
 	}

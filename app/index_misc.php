@@ -35,7 +35,6 @@ $classes[] = "Shared.js";
 $classes[] = "ShowInfo.js";
 foreach($classes as $class) {
 	if(file_exists($shared_path . $class)){
-		echo "// $shared_path$class\n";
 		$content .= file_get_contents($shared_path . $class);
 	}
 }
@@ -47,6 +46,7 @@ $classes[] = "Navigation.js";
 $classes[] = "ContextMenu.js";
 $classes[] = "Items.js";
 $classes[] = "UserStories.js";
+$classes[] = "Epics.js";
 $content = '';
 foreach($classes as $class) {
 	if(file_exists($client_path . $class)){

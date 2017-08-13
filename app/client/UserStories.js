@@ -5,13 +5,23 @@ isc.defineClass("UserStories", "myWindow").addProperties({
 		this.UserStoriesDS = isc.myDataSource.create({
 			dataURL: serverPath + "UserStories.php",
 			fields:[
-				{name: "storyID", primaryKey: true, type: "sequence", detail: true, canEdit: false},
+				{name: "userStoryID", primaryKey: true, type: "sequence", detail: true, canEdit: false},
+				{name: "projectID", type: "integer", width: 80},
+				{name: "epicID",
+					type: "integer",
+					width: 80,
+					optionDataSource: isc.Shared.epicListDS,
+					displayField: "epicName",
+					valueField: "epicID"
+				},
+				{name: "sprintID", type: "integer", width: 80},
 				{name: "author", width: 80},
 				{name: "storyName", width: 150},
 				{name: "role", width: "25%", title: "As a"},
 				{name: "something", width: "25%", title: "I want"},
 				{name: "benefit", width: "25%", title: "So that"},
-				{name: "lastChangedDate", width: 120, canEdit: false}
+				{name: "completed", type: "boolean", width: 80},
+				{name: "lastChangeDate", width: 120, canEdit: false}
 			]
 		});
 		this.UserStoriesLG = isc.myListGrid.create({

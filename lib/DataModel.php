@@ -144,6 +144,12 @@ class DataModel extends Server {
 		// echo("/*" . $sql . "*/");
 		try{
 			$stmt = $this->conn->prepare($sql);
+			if(!$stmt){
+				$return['status'] = $stmt->errorCode();
+				$return['errorMessage'] = $stmt->errorInfo();
+				$return['errorMessage'] .= $sql;
+				return $return;
+			}
 			$stmt->execute($binding);
 			if(!$stmt){
 				$return['status'] = $stmt->errorCode();
