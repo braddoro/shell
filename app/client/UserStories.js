@@ -12,14 +12,14 @@ isc.defineClass("UserStories", "myWindow").addProperties({
 					canEdit: false
 				},
 				{name: "projectID",
-					type: "integer",
+					// type: "integer",
 					width: 80,
 					optionDataSource: isc.Shared.projectListDS,
 					displayField: "projectName",
 					valueField: "projectID"
 				},
 				{name: "epicID",
-					type: "integer",
+					// type: "integer",
 					width: 80,
 					optionDataSource: isc.Shared.epicListDS,
 					displayField: "epicName",
