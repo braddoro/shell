@@ -5,7 +5,8 @@ isc.defineClass("Navigation", "Menu").addProperties({
 			items: [
 				{title: "Projecs", enabled: false, click: "isc.Epics.create()"},
 				{title: "Epics", click: "isc.Epics.create()"},
-				{title: "Stories", click: "isc.UserStories.create()"}
+				{title: "Sprints", enabled: false, click: "isc.Sprints.create()"},
+				{title: "User Stories", click: "isc.UserStories.create()"}
 			]
 		});
 		this.mainMenu = isc.myMenu.create({

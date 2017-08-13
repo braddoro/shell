@@ -5,8 +5,19 @@ isc.defineClass("UserStories", "myWindow").addProperties({
 		this.UserStoriesDS = isc.myDataSource.create({
 			dataURL: serverPath + "UserStories.php",
 			fields:[
-				{name: "userStoryID", primaryKey: true, type: "sequence", detail: true, canEdit: false},
-				{name: "projectID", type: "integer", width: 80},
+				{name: "userStoryID",
+					primaryKey: true,
+					type: "sequence",
+					detail: true,
+					canEdit: false
+				},
+				{name: "projectID",
+					type: "integer",
+					width: 80,
+					optionDataSource: isc.Shared.projectListDS,
+					displayField: "projectName",
+					valueField: "projectID"
+				},
 				{name: "epicID",
 					type: "integer",
 					width: 80,
