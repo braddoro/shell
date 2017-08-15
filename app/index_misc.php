@@ -24,8 +24,8 @@ echo "<html>
 <title>$title</title>
 </head>
 <body>
-<script>
-";
+<script>";
+$content = '';
 // Shared files.
 //
 $classes = array();
@@ -56,7 +56,7 @@ foreach($classes as $class) {
 echo $content;
 $cmdret = '';
 exec("git status --short --branch", $cmdret);
-$str='';
+$str = '';
 foreach ($cmdret as $key) {
 	$str .= $key . '<br/>';
 }
