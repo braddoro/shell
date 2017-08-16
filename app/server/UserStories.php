@@ -3,7 +3,8 @@ require_once('../../lib/DataModel.php');
 $params = array(
 	'baseTable' => 'agile_user_stories',
 	'pk_col' => 'userStoryID',
-	'allowedOperations' => array('fetch','add','update','remove')
+	'allowedOperations' => array('fetch','add','update','remove'),
+	'ini_file' => realpath('../../lib/server.ini')
 );
 $lclass = New DataModel($params);
 if($lclass->status != 0){
