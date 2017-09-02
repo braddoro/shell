@@ -12,5 +12,20 @@ isc.Shared = {
 			{name: "projectID", type: "sequence", primaryKey: true},
 			{name: "projectName", type: "text"}
 		]
+	}),
+	taskTypesDS: isc.myDataSource.create({
+		dataURL: serverPath + "TaskTypes.php",
+		fields:[
+			{name: "taskTypeID", type: "sequence", primaryKey: true},
+			{name: "taskType", type: "text"}
+		]
+	}),
+	taskProjectsDS: isc.myDataSource.create({
+		dataURL: serverPath + "TaskProjects.php",
+		fields:[
+			{name: "projectID", type: "sequence", primaryKey: true},
+			{name: "projectName", type: "text"},
+			{name: "projectCode", type: "text"}
+		]
 	})
 };

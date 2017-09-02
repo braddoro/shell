@@ -47,6 +47,7 @@ $classes[] = "ContextMenu.js";
 $classes[] = "Items.js";
 $classes[] = "UserStories.js";
 $classes[] = "Epics.js";
+$classes[] = "Tasks.js";
 $content = '';
 foreach($classes as $class) {
 	if(file_exists($client_path . $class)){
